@@ -85,7 +85,6 @@ resource "packet_device" "virl" {
          "salt-call state.sls virl.basics",
          "printf '/usr/bin/curl -H X-Auth-Token:${var.packet_api_key} -X DELETE https://api.packet.net/devices/${packet_device.virl.id}\n'>/etc/deadtimer",
          "at now + ${var.dead_mans_timer} hours -f /etc/deadtimer",
-         #"sleep 1200",
          "salt-call state.sls openstack",
          "/usr/local/bin/vinstall salt",
          "salt-call state.sls openstack.setup",
