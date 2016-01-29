@@ -95,8 +95,8 @@ resource "packet_device" "virl" {
          "salt-call state.sls virl.guest",
          "salt-call state.sls openstack.restart",
          "salt-call state.sls virl.routervms",
-         "salt-call state.sls virl.openvpn",
-         "salt-call state.sls virl.openvpn.packet",
+         #"salt-call state.sls virl.openvpn",
+         #"salt-call state.sls virl.openvpn.packet",
          "reboot"
    ]
   }
